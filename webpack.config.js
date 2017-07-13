@@ -15,7 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     // publicPath: './',
-    filename: '[name].js'
+    filename: 'js/[name].js'
   },
   module: {
     loaders: [{
@@ -45,7 +45,7 @@ module.exports = {
     }),
     new CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.js'
+      filename: 'js/vendor.js'
     }),
     new WriteFilePlugin()
   ]
