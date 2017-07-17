@@ -7,14 +7,13 @@ const { CommonsChunkPlugin } = webpackOptimize
 
 module.exports = {
   entry: {
-    home: './src/index.js',
+    index: './src/index.js',
     a: './src/a.js',
     bAndC: ['./src/b.js', './src/c.js'],
     vendor: ['react']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    // publicPath: './',
     filename: 'js/[name].js'
   },
   module: {
@@ -27,9 +26,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      title: 'title >>> home',
-      chunks: ['vendor', 'home'],
-      filename: 'home.html'
+      title: 'title >>> index',
+      chunks: ['vendor', 'index'],
+      filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -48,5 +47,10 @@ module.exports = {
       filename: 'js/vendor.js'
     }),
     new WriteFilePlugin()
-  ]
+  ],
+  devServer: {
+    contentBase: './dist',
+    open: true,
+    openPage: '' // https://github.com/webpack/webpack-dev-server/issues/960#issuecomment-311477326
+  }
 }
