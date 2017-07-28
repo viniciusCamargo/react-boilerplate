@@ -19,6 +19,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: './dist',
+    port: 8888,
     open: true,
     openPage: '' // https://github.com/webpack/webpack-dev-server/issues/960#issuecomment-311477326
   }
