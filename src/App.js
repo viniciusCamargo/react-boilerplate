@@ -6,7 +6,7 @@ export default class App extends Component {
     super()
     this.state = {}
   }
-  componentDidMount() {
+  componentDidUpdate() {
     log(this.state)
   }
   render() {
