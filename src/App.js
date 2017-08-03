@@ -15,6 +15,5 @@ export default class App extends Component {
         yo
       </div>
     )
-    )
   }
 }
